@@ -5,7 +5,7 @@ from games.twentyone import *
 import numpy as np
 
 # get all the file names in the bots folder
-# import each file and get the rpsagent
+# import each file and get the bot class
 # choose 2 random players and let them play
 
 ngames = 100
@@ -26,7 +26,7 @@ def read_file_make_bot(file_name, playerid):
 files = read_py_files_in_folder('bots/', 'to')
 print(files)
 
-stats = {f: [0, 0] for f in files} # [wins, games]
+stats = {f: [0, 0, 0] for f in files} # [wins, ties, games]
 
 for g in range(ngames):
   print(g)
@@ -51,9 +51,13 @@ for g in range(ngames):
   winner = game.winner()
   if winner:
     stats[files[winner]][0] += 1
+  else:
+    stats[files[0]][1] += 1
+    stats[files[1]][1] += 1
 
-  stats[files[0]][1] += 1
-  stats[files[1]][1] += 1
+  stats[files[0]][2] += 1
+  stats[files[1]][2] += 1
 
 for k in stats.keys():
-  print(k, stats[k], stats[k][0] / stats[k][1])
+  # calc win %
+  print(k, stats[k], stats[k][0] / stats[k][2])
