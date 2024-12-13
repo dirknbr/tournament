@@ -14,6 +14,22 @@ class TestTwentyOne(unittest.TestCase):
     print(game.state, game.total, game.winner())
     self.assertEqual(game.winner(), 1)
 
+  def test_correct_winner(self):
+    game = TwentyOne()
+    game.total = [10, 10]
+    winner = game.winner()
+    self.assertEqual(winner, None)
+    game.total = [21, 10]
+    winner = game.winner()
+    self.assertEqual(winner, 0)
+    game.total = [22, 22]
+    winner = game.winner()
+    self.assertEqual(winner, None)
+    game.total = [22, 20]
+    winner = game.winner()
+    self.assertEqual(winner, 1)
+
+
 
 if __name__ == '__main__':
   unittest.main()
