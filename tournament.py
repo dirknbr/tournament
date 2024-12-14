@@ -2,6 +2,7 @@
 import os
 from games.rps import *
 from games.twentyone import *
+from games.prednext import *
 import numpy as np
 
 # get all the file names in the bots folder
@@ -42,6 +43,7 @@ for g in range(ngames):
 
   game = TwentyOne()
   # game = RPS()
+  # game = PredNext()
 
   while not game.is_done():
     game_state = game.get_state()
@@ -49,9 +51,9 @@ for g in range(ngames):
     # print(game_state)
 
   winner = game.winner()
-  if winner:
+  if winner is not None:
     stats[files[winner]][0] += 1
-  else:
+  else: # it's a tie
     stats[files[0]][1] += 1
     stats[files[1]][1] += 1
 
