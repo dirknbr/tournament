@@ -14,4 +14,5 @@ Each bot has the following method: `play`.
 
 - rock paper scissors (best of 3)
 - game of 21
-- guess the next number 5 times, lowest abs diff wins
+- guess the next number 5 times, lowest abs diff total wins
+- guess a 4 digit pin
