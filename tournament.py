@@ -20,7 +20,7 @@ def read_py_files_in_folder(folder_path, prefix):
       py_files.append(file_path)
   return py_files
 
-def read_file_make_bot(file_name, playerid):
+def read_file_make_bot(file_name):
   with open(file_name, 'r') as f:
     code = f.read()
   return code
@@ -35,11 +35,11 @@ for g in range(ngames):
   print(g)
   np.random.shuffle(files)
 
-  code = read_file_make_bot(files[0], 0)
+  code = read_file_make_bot(files[0])
   exec(code)
   bot0 = Bot(0)
 
-  code = read_file_make_bot(files[1], 1)
+  code = read_file_make_bot(files[1])
   exec(code)
   bot1 = Bot(1)
 
