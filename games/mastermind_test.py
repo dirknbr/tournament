@@ -28,6 +28,10 @@ class TestMastermind(unittest.TestCase):
     with self.assertRaises(AttributeError):
       x = game.__pin
 
+  def test_get_check_forbidden(self):
+    game = Mastermind()
+    with self.assertRaises(AttributeError):
+      game.__check('0000')
 
 if __name__ == '__main__':
   unittest.main()

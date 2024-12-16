@@ -9,7 +9,7 @@ class Mastermind:
     self.guesses = 0
     self.state = [[], []]
 
-  def count(self, guess):
+  def __count(self, guess):
     # return bulls for exact and cows for right num in wrong pos
     bulls, cows = 0, 0
     for i in range(4):
@@ -22,8 +22,8 @@ class Mastermind:
   def play_round(self, bot0, bot1):
     # check both are 4 digits long
     assert len(bot0) == 4 and len(bot1) == 4
-    b0, c0 = self.count(bot0)
-    b1, c1 = self.count(bot1)
+    b0, c0 = self.__count(bot0)
+    b1, c1 = self.__count(bot1)
     if b0 == 4 or b1 == 4: # success
       self.done = True
     self.state[0].append([bot0, b0, c0]) # also record the guess
