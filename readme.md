@@ -16,3 +16,4 @@ Each bot has the following method: `play`.
 - game of 21
 - guess the next number 5 times, lowest abs diff total wins
 - guess a 4 digit pin
+- set price to maximise profit (given 5 noisy price and demand pairs)
