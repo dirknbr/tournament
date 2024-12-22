@@ -26,7 +26,8 @@ class PredNext:
     return self.done
 
   def winner(self):
-    return self.total.index(min(self.total))
+    # return self.total.index(min(self.total))
+    return np.argmin(self.total)
 
   def get_state(self):
     return {'total': self.total, 'state': self.state}
