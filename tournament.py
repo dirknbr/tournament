@@ -4,6 +4,7 @@ from games.rps import *
 from games.twentyone import *
 from games.prednext import *
 from games.mastermind import *
+from games.profit import *
 import numpy as np
 
 # get all the file names in the bots folder
@@ -26,7 +27,7 @@ def read_file_make_bot(file_name):
   return code
   
 # change prefix
-files = read_py_files_in_folder('bots/', 'pn')
+files = read_py_files_in_folder('bots/', 'to')
 print(files)
 
 stats = {f: [0, 0, 0] for f in files} # [wins, ties, games]
@@ -44,10 +45,11 @@ for g in range(ngames):
   bot1 = Bot(1)
 
   # choose game
-  # game = TwentyOne()
+  game = TwentyOne()
   # game = RPS()
-  game = PredNext()
+  # game = PredNext()
   # game = Mastermind()
+  # game = Profit()
 
   while not game.is_done():
     game_state = game.get_state()
