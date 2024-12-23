@@ -10,6 +10,9 @@ Each game has the following methods: `play_round`, `winner`, `is_done`, `get_sta
 
 Each bot has the following method: `play`.
 
+In `tournament.py` relevant bots are paired and games are played to determine the overall
+win percentage.
+
 ## Games
 
 - rock paper scissors (best of 3)
